@@ -1,0 +1,37 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 17
+VisualStudioVersion = 17.2.32516.85
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "IttSpeech", "IttSpeech\IttSpeech.csproj", "{2E618972-209D-46CD-B8C4-2CB9ABF61638}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "AudioListener", "AudioListener\AudioListener.csproj", "{D2302A07-6A6A-45F5-9088-9A573F49B6D6}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ConsoleClient", "ConsoleClient\ConsoleClient.csproj", "{52C1AC6E-AF09-4D14-9AAD-1BC16A405638}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{2E618972-209D-46CD-B8C4-2CB9ABF61638}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{2E618972-209D-46CD-B8C4-2CB9ABF61638}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{2E618972-209D-46CD-B8C4-2CB9ABF61638}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{2E618972-209D-46CD-B8C4-2CB9ABF61638}.Release|Any CPU.Build.0 = Release|Any CPU
+		{D2302A07-6A6A-45F5-9088-9A573F49B6D6}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{D2302A07-6A6A-45F5-9088-9A573F49B6D6}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{D2302A07-6A6A-45F5-9088-9A573F49B6D6}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{D2302A07-6A6A-45F5-9088-9A573F49B6D6}.Release|Any CPU.Build.0 = Release|Any CPU
+		{52C1AC6E-AF09-4D14-9AAD-1BC16A405638}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{52C1AC6E-AF09-4D14-9AAD-1BC16A405638}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{52C1AC6E-AF09-4D14-9AAD-1BC16A405638}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{52C1AC6E-AF09-4D14-9AAD-1BC16A405638}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {D3809DDA-A2E6-4091-98EE-64F36849A54A}
+	EndGlobalSection
+EndGlobal

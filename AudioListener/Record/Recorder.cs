@@ -41,6 +41,17 @@ namespace AudioListener.Recording
             Iniciar();
 
         }
+        public Recorder(DateTime start, DateTime end, string outputFilePath,string fileName)
+        {
+            FileName = fileName;
+            OutputFilePath = outputFilePath;
+            OutputFolder = "AudioListener";
+            Start = start;
+            End = end;
+
+            Iniciar();
+
+        }
         public void Iniciar()
         {
             OutputFolder = Path.Combine(OutputFilePath, OutputFolder);
@@ -82,6 +93,7 @@ namespace AudioListener.Recording
         public void Detener()
         {
             WaveIn.StopRecording();
+            this.Dispose();
         }
 
         protected virtual void Dispose(bool disposing)

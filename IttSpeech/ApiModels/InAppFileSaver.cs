@@ -10,7 +10,7 @@
         }
         public async Task<string> Save(IFormFile file,string folderName)
         {
-            var filename = $"{Guid.NewGuid()}{Path.GetExtension(file.FileName)}";
+            var filename = $"{Guid.NewGuid()}{DateTime.Now.Date.Year.   ToString()}{Path.GetExtension(file.FileName)}";
             string route = Path.Combine(env.WebRootPath,folderName);
             if (!Directory.Exists(route))
             {

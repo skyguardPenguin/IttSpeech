@@ -35,7 +35,7 @@ namespace IttSpeech.Directions
         public async Task<IActionResult> Recibir([FromForm] IFormFile file)
         {
             string path = await _fileSaver.Save(file, "files");
-            string result= _analizer.Analize(path);
+            string result= await _analizer.Analize(path);
             return Ok(result);
         }
 

@@ -21,7 +21,7 @@ namespace IttSpeech.Controllers
             //response.response = result;
             //return new Response() ;
             string path = await _fileSaver.Save(file, "files");
-            string result = _analizer.Analize(path);
+            string result = await _analizer.Analize(path);
             response.result = "OK";
             response.response = result;
             return response;

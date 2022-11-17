@@ -1,7 +1,7 @@
 ﻿using AudioListener.Recording;
 using Syn.Logging;
 using Syn.Speech.Api;
-
+using AudioListener.Syntactic;
 namespace AudioListener.Speech
 {
     public class Analizer
@@ -31,25 +31,28 @@ namespace AudioListener.Speech
                     GrammarPath = @"C:\Users\sinoa\source\repos\IttSpeech\Grammars",
                     GrammarName= "g1"
                 };
+           
             _speechRecognizer = new StreamSpeechRecognizer(_configuration);
     
-            Logger.LogReceived += Logger_LogReceived;
+            //Logger.LogReceived += Logger_LogReceived;
 
 
             
         }
 
-        public string Analize(string path)
+        public async Task<string> Analize(string path)
         {
+           
             string value = "";
             _speechRecognizer.StartRecognition(new FileStream(path, FileMode.Open));
 
             var result = _speechRecognizer.GetResult();
             _speechRecognizer.StopRecognition();
-            if (result != null)
+            if (result != null )
             {
                 Console.WriteLine("Speech Recognized: " + result.GetHypothesis());
-                value += result.GetHypothesis();
+                value += result.GetHypothesis() == "" ? ";" :result.GetHypothesis() ;
+                value = await SyntacticAnalizer.AnalizeEntry("localhost", 4989, value);
             }
             return value;
         }

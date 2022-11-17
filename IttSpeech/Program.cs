@@ -1,9 +1,10 @@
 using IttSpeech.Agreement;
-using AudioListener.Record;
+using AudioListener.Recording;
 using AudioListener.Speech;
 using IttSpeech.ApiModels;
 
 // Creación de referencia en memoría para almacenar metadatos de la aplicación
+var MyAllowSpecificOrigins = "_myAllowSpecificOrigins";
 
 WebApplication app;
 // Construcción del ecosistema de ejecución
@@ -20,12 +21,22 @@ WebApplication app;
     }
     else { /* Crear un json en la máquina de producción con los secretos */ }
     builder.Services.AddSingleton<InAppFileSaver>(new InAppFileSaver(builder.Environment));
+    builder.Services.AddCors(options =>
+    {
+        options.AddPolicy(name: MyAllowSpecificOrigins,
+                          policy =>
+                          {
+                              policy.WithOrigins("http://127.0.0.1:5501",
+                                                  "*");
+                          });
+    });
     app = builder.Build();
     
 }
 
 // Punteros de servicios e intereses
 {
+    app.UseCors(MyAllowSpecificOrigins);
     app.UseMiddleware<Contract>();
     app.UseHttpsRedirection();
     app.UseAuthorization();
